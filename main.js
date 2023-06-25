@@ -1,7 +1,7 @@
 size = 700 // size in pixels, the canvas is a square
 m = 1 // the "zoom", higher m - smaller mandelbrot set
 xOffset = -0.4 // the center of canvas is at point (xOffest, 0) in the complex plane
-iterations = 200 // more iterations - more time to wait but better the image
+iterations = 200 // more iterations - more time to wait but better image
 
 canvas = document.getElementById("cn")
 canvas.width = size
@@ -12,7 +12,7 @@ id = ctx.createImageData(1, 1) // some stuff for "setPixel" function
 d = id.data
 d[3] = 255
 
-// square of absolute value of a complex number (we don't need the real abs value)
+// square of absolute value of a complex number (we won't need the normal absolute value)
 // a complex number is Array(real, imag)
 absSqr = (z) => { 
 
@@ -47,7 +47,7 @@ generateMandelbrot = () => {
 			for (k = 0;k < iterations; k++) {
 				z = complexSquare([z[0]+x, z[1]+y])
 				if (absSqr(z) > 4) {
-					//"the yellow thing" around the Mandelbrot set
+					//"the colorful thing" around the Mandelbrot set
 					//the values are from 0 to 1
 					r = 0
 					g = 1
